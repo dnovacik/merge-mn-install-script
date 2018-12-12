@@ -44,7 +44,7 @@ read setup
 	wget https://github.com/ProjectMerge/merge/releases/download/1.0.0/merge-testnet-1.0.0-linux64.tar.gz
 	tar -xf merge-testnet-1.0.0-linux64.tar.gz
 	rm merge-testnet-1.0.0-linux64.tar.gz
-fi
+
 echo "Masternode Configuration"
 echo "Your IP address is:"
 sudo hostname -I
