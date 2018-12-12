@@ -47,7 +47,7 @@ read setup
 
 echo "Masternode Configuration"
 echo "Your IP address is:"
-sudo hostname -I
+sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
 
 echo "Is this the IP you wish to use for MasterNode? [y/n] , followed by [ENTER]"
 read ipd
@@ -59,7 +59,7 @@ read ipd
 	CONF_DIR=~/.MERGE\/
 	CONF_FILE=MERGE.conf
 	PORT=62000
-	IP=$(hostname -I)
+	IP=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
 	mkdir -p $CONF_DIR
 	echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
 	echo "rpcpassword=passw"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
