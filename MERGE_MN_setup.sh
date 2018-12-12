@@ -56,8 +56,8 @@ read ipd
 	echo "Using your default IP address"
 	echo "Enter masternode private key for node, followed by [ENTER]: $ALIAS"
 	read PRIVKEY
-	CONF_DIR=~/.testnet4\/
-	CONF_FILE=merge.conf
+	CONF_DIR=~/.MERGE\/
+	CONF_FILE=MERGE.conf
 	PORT=62000
 	IP=$(hostname -I)
 	mkdir -p $CONF_DIR
@@ -89,8 +89,8 @@ else
 	echo ""
 	echo "Enter masternode private key for node, followed by [ENTER]: $ALIAS"
 	read PRIVKEY
-	CONF_DIR=~/.testnet4\/
-	CONF_FILE=merge.conf
+	CONF_DIR=~/.MERGE\/
+	CONF_FILE=MERGE.conf
 	PORT=62000
 	mkdir -p $CONF_DIR
 	echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
